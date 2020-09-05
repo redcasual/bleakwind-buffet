@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    class DragonbornWaffleFries
+    public class DragonbornWaffleFries
     {
         private Size size= Size.Small;
         /// <summary>

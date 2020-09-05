@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BreakwindBuffet.Data.Drinks
 {
-    class WarriorWater
+    public class WarriorWater
     {
         private Size size = Size.Small;
         /// <summary>

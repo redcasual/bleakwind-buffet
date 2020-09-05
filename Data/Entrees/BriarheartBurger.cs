@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class BriarheartBurger
+    public class BriarheartBurger
     {
         /// <summary>
         /// A property to determine the price, this is static
