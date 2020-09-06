@@ -154,7 +154,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// A function that overrides the original toString method in order to return the size and name of the drink and if it is decaf
         /// </summary>
         /// <returns> The size and name of the drink and if it is decaf </returns>
-        public string toString()
+        public override string ToString()
         {
             if(decaf)
             {

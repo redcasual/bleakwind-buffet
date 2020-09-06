@@ -86,11 +86,20 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        private List<string> specialInstructions = new List<string>();
+        /// <summary>
+        /// A string list property that contains all special orders ie bun
+        /// </summary>
+        public List<String> SpecialInstructions
+        {
+            get => new List<string>(specialInstructions);
+        }
+
         /// <summary>
         /// A function that overrides the original toString method in order to return the size and name of the side
         /// </summary>
         /// <returns> the size and name of the side </returns>
-        public string toString()
+        public override string ToString()
         {
             return size + " Mad Otar Grits";
         }

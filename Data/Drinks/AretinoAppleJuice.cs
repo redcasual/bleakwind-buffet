@@ -119,7 +119,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// A function that overrides the original toString method in order to return the size and name of the drink
         /// </summary>
         /// <returns> the size and name of the drink </returns>
-        public string toString()
+        public override string ToString()
         {
             return size + " Aretino Apple Juice";
         }

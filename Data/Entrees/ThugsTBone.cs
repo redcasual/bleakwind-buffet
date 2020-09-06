@@ -33,7 +33,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// A function that overrides the original toString method in order to return the entree
         /// </summary>
         /// <returns> the name of the entree </returns>
-        String toString()
+        public override string ToString()
         {
             return "Thugs T-Bone";
         }

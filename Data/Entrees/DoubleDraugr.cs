@@ -4,13 +4,13 @@ using System.Text;
 
 /*
 * Author: Mitch Higgins
-* Class name: DoubleBraugr.cs
+* Class name: DoubleDraugr.cs
 * Purpose: Create all the necessary properties for double braugr in order to make a proper order
 */
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class DoubleBraugr
+    public class DoubleDraugr
     {
         /// <summary>
         /// A property to determine the price, this is static
@@ -179,9 +179,9 @@ namespace BleakwindBuffet.Data.Entrees
         /// A function that overrides the original toString method in order to return the entree
         /// </summary>
         /// <returns> the name of the entree </returns>
-        String toString()
+        public override string ToString()
         {
-            return "Double Braugr";
+            return "Double Draugr";
         }
     }
 }
