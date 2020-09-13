@@ -1,4 +1,5 @@
 ﻿using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,34 +12,17 @@ using System.Text;
 
 namespace BreakwindBuffet.Data.Drinks
 {
-    public class WarriorWater
+    public class WarriorWater : Drink
     {
-        private Size size = Size.Small;
-        /// <summary>
-        /// A property for the size of the drink that gets the size based on a private variable and sets the size based on input
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-
-            set
-            {
-                size = value;
-            }
-        }
-
         /// <summary>
         /// A property that determines the price, this one is static
         /// </summary>
-        public double Price => 0.0;
+        public override double Price => 0.0;
 
         /// <summary>
         /// A property that determines the calories, this one is static
         /// </summary>
-        public uint Calories => 0;
+        public override uint Calories => 0;
 
         private bool ice = true;
         /// <summary>
@@ -82,7 +66,7 @@ namespace BreakwindBuffet.Data.Drinks
         /// <summary>
         /// A string list property that contains all special orders ie ice
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
@@ -93,7 +77,7 @@ namespace BreakwindBuffet.Data.Drinks
         /// <returns> the size and name of the drink </returns>
         public override string ToString()
         {
-            return size + " Warrior Water";
+            return Size + " Warrior Water";
         }
     }
 }

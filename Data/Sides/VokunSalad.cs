@@ -11,77 +11,38 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class VokunSalad
+    public class VokunSalad : Side
     {
-        private Size size = Size.Small;
-        /// <summary>
-        /// A property for the size of the side that gets the size based on a private variable and sets the size based on input
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-
-            set
-            {
-                size = value;
-            }
-        }
-
-        private double price = 0.93;
         /// <summary>
         /// A property for the price of the side that gets the price based on a private variable and sets the price based on input
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    price = 0.93;
-                    return price;
-                }
-
-                else if (size == Size.Medium)
-                {
-                    price = 1.28;
-                    return price;
-                }
-
-                else
-                {
-                    price = 1.82;
-                    return price;
+                    case Size.Small: return 0.93;
+                    case Size.Medium: return 1.28;
+                    case Size.Large: return 1.82;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
 
-        private uint calories = 31;
         /// <summary>
         /// A property for the calories in the side that gets the calories based on a private variable and sets the calories based on input
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    calories = 41;
-                    return calories;
-                }
-
-                else if (size == Size.Medium)
-                {
-                    calories = 52;
-                    return calories;
-                }
-
-                else
-                {
-                    calories = 73;
-                    return calories;
+                    case Size.Small: return 41;
+                    case Size.Medium: return 52;
+                    case Size.Large: return 73;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -90,7 +51,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// A string list property that contains all special orders ie bun
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
@@ -101,7 +62,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <returns> the size and name of the side </returns>
         public override string ToString()
         {
-            return size + " Vokun Salad";
+            return Size + " Vokun Salad";
         }
     }
 }

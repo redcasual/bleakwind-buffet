@@ -10,22 +10,22 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
         /// <summary>
         /// A property to determine the price, this is static
         /// </summary>
-        public double Price => 5.62;
+        public override double Price => 5.62;
         /// <summary>
         /// A property to determine the calories, this is static
         /// </summary>
-        public uint Calories => 602;
+        public override uint Calories => 602;
 
         private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// A string list property that contains all special orders ie sausage links
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }

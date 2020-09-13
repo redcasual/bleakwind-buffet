@@ -11,77 +11,37 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink
     {
-        private Size size = Size.Small;
-        /// <summary>
-        /// A property for the size of the drink that gets the size based on a private variable and sets the size based on input
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-
-            set
-            {
-                size = value;
-            }
-        }
-
-        private double price = 1.05;
         /// <summary>
         /// A property for the price of the drink that gets the price based on a private variable and sets the price based on input
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    price = 1.05;
-                    return price;
-                }
-
-                else if (size == Size.Medium)
-                {
-                    price = 1.11;
-                    return price;
-                }
-
-                else
-                {
-                    price = 1.22;
-                    return price;
+                    case Size.Small: return 1.05;
+                    case Size.Medium: return 1.11;
+                    case Size.Large: return 1.22;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
-
-        private uint calories = 56;
         /// <summary>
         /// A property for the calories in the drink that gets the calories based on a private variable and sets the calories based on input
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (size == Size.Small)
+                switch (Size)
                 {
-                    calories = 56;
-                    return calories;
-                }
-
-                else if (size == Size.Medium)
-                {
-                    calories = 72;
-                    return calories;
-                }
-
-                else
-                {
-                    calories = 93;
-                    return calories;
+                    case Size.Small: return 56;
+                    case Size.Medium: return 72;
+                    case Size.Large: return 93;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
             }
         }
@@ -110,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// A string list property that contains all special orders ie ice
         /// </summary>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
@@ -121,7 +81,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns> the name of the drink and its size </returns>
         public override string ToString()
         {
-            return size + " Markarth Milk";
+            return Size + " Markarth Milk";
         }
     }
 }
