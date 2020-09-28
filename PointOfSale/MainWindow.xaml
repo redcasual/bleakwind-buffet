@@ -1,0 +1,45 @@
+﻿<Window x:Class="PointOfSale.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointOfSale"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="main">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Name="window" Grid.Column="0">
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Button Click="EntreeOpen" Background="Salmon" Foreground="AntiqueWhite" FontWeight="Bold" Name ="Entree" Grid.Row ="0" Grid.Column="0" FontSize="26">
+                    Entree
+                </Button>
+
+                <Button Click="SideOpen" Background="LightGray" Foreground="AntiqueWhite" FontWeight="Bold" Name ="Side" Grid.Row ="1" Grid.Column="0" FontSize="26">
+                    Side
+                </Button>
+
+                <Button Click="DrinkOpen" Background="CornflowerBlue" Foreground="AntiqueWhite" FontWeight="Bold" Name ="Drink" Grid.Row ="2" Grid.Column="0" FontSize="26">
+                    Drink
+                </Button>
+
+            </Grid>
+        </Border>
+
+        <ListBox Name="Order"  Grid.Column="1" Background="AliceBlue" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" FontWeight="DemiBold"/>
+        <Label Content="Subtotal:" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,60" VerticalAlignment="Bottom" Width="180" FontFamily="Arial" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Label Content="Tax:" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,30" VerticalAlignment="Bottom" Width="180" FontFamily="Arial" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Label Content="Total:" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="180" FontFamily="Arial" FontSize="24" FontWeight="ExtraBold" HorizontalContentAlignment="Center"/>
+
+
+
+    </Grid>
+</Window>
